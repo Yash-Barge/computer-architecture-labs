@@ -5,14 +5,9 @@ module compare_bh (A, B, out);
     reg [2:0] out;
 
     always@(A or B) begin
-        out = 3'b000;
-        
-        if (A > B)
-            out[1] = 1'b1;
-        else if (A < B)
-            out[2] = 1'b1;
-        else
-            out[0] = 1'b1;
+        out[2] = A < B;
+        out[1] = A > B;
+        out[0] = A == B;
     end
 endmodule
 
@@ -31,7 +26,6 @@ module compare_gate (A, B, out);
     input [3:0] B;
     output [2:0] out;
 
-    // wire na3, na2, na1, na0, nb3, nb2, nb1, nb0;
     not na3(na3, A[3]);
     not na2(na2, A[2]);
     not na1(na1, A[1]);
@@ -41,21 +35,42 @@ module compare_gate (A, B, out);
     not nb1(nb1, B[1]);
     not nb0(nb0, B[0]);
 
-    // wire a3nb3, na3b3, a2nb2, na2b2, a1nb1, na1b1, a0nb0, na0b0;
-    and a3nb3(a3nb3, a3, nb3);
-    and na3b3(na3b3, na3, b3);
-    and a2nb2(a2nb2, a2, nb2);
-    and na2b2(na2b2, na2, b2);
-    and a1nb1(a1nb1, a1, nb1);
-    and na1b1(na1b1, na1, b1);
-    and a0nb0(a0nb0, a0, nb0);
-    and na0b0(na0b0, na0, b0);
+    and a3nb3(a3nb3, A[3], nb3);
+    and na3b3(na3b3, na3, B[3]);
+    and a2nb2(a2nb2, A[2], nb2);
+    and na2b2(na2b2, na2, B[2]);
+    and a1nb1(a1nb1, A[1], nb1);
+    and na1b1(na1b1, na1, B[1]);
+    and a0nb0(a0nb0, A[0], nb0);
+    and na0b0(na0b0, na0, B[0]);
 
-    // wire x3, x2, x1, x0;
     xnor x3(x3, a3nb3, na3b3);
     xnor x2(x2, a2nb2, na2b2);
     xnor x1(x1, a1nb1, na1b1);
     xnor x0(x0, a0nb0, na0b0);
+
+    and i2and0(i2and0, x3, na2b2);
+    and i2and1(i2and1, x3, a2nb2);
+
+    and x3x2(x3x2, x3, x2);
+    and i3and0(i3and0, x3x2, na1b1);
+    and i3and1(i3and1, x3x2, a1nb1);
+
+    and x3x2x1(x3x2x1, x3x2, x1);
+    and i4and0(i4and0, x3x2x1, na0b0);
+    and i4and1(i4and1, x3x2x1, a0nb0);
+
+    and(out[0], x3x2x1, x0);
+
+    or out1_0(out1_0, a3nb3, i2and1);
+    or out1_1(out1_1, i3and1, i4and1);
+
+    or(out[1], out1_0, out1_1);
+
+    or out2_0(out2_0, na3b3, i2and0);
+    or out2_1(out2_1, i3and0, i4and0);
+
+    or(out[2], out2_0, out2_1);
 endmodule
 
 module testbench;
