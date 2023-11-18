@@ -105,22 +105,24 @@ module testbench();
     ENCRYPT box(number, key, clock, reset, enc_number);
 
     initial begin
-        $monitor("enc_number=%x", enc_number);
+        $monitor("number=%x, key=%x | enc_number=%x", number, key, enc_number);
+
+        #1
         number = 8'b01000110;
         key = 8'b10010011;
 
-        #8
+        #2
         number = 8'b11001001;
         key = 8'b10101100;
 
-        #8
+        #2
         number = 8'b10100101;
         key = 8'b01011010;
 
-        #8
+        #2
         number = 8'b11110000;
         key = 8'b10110001;
 
-        #8 $finish;
+        #2 $finish;
     end
 endmodule
