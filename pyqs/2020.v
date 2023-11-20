@@ -92,9 +92,4 @@ module testbench();
         $monitor($time, " %b", match);
         #32 $finish;
     end
-
-    // initial begin
-    //     $dumpfile("test.vcd");
-    //     $dumpvars;
-    // end
 endmodule
