@@ -84,4 +84,9 @@ module testbench();
         #2 clear = 1'b0;
         #100 $finish;
     end
+
+    initial begin
+        $dumpfile("2017.vcd");
+        $dumpvars;
+    end
 endmodule

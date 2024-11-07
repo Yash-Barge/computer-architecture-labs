@@ -1,0 +1,333 @@
+$date
+	Thu Dec  7 15:49:46 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_jk $end
+$var wire 4 ! temp [3:0] $end
+$var wire 1 " out $end
+$var wire 16 # data [15:0] $end
+$var reg 1 $ clk $end
+$scope module tp $end
+$var wire 1 $ clk $end
+$var wire 4 % temp [3:0] $end
+$var wire 1 & q3 $end
+$var wire 1 ' q2 $end
+$var wire 1 ( q1 $end
+$var wire 1 ) q0 $end
+$var wire 1 " out $end
+$var wire 16 * data [15:0] $end
+$scope module bcdc $end
+$var wire 1 $ clk $end
+$var wire 1 + k $end
+$var wire 1 & q3 $end
+$var wire 1 ' q2 $end
+$var wire 1 ( q1 $end
+$var wire 1 ) q0 $end
+$scope module jk0 $end
+$var wire 1 $ clk $end
+$var wire 1 , j $end
+$var wire 1 - k $end
+$var reg 1 ) q $end
+$upscope $end
+$scope module jk1 $end
+$var wire 1 ) clk $end
+$var wire 1 . j $end
+$var wire 1 / k $end
+$var reg 1 ( q $end
+$upscope $end
+$scope module jk2 $end
+$var wire 1 ( clk $end
+$var wire 1 0 j $end
+$var wire 1 1 k $end
+$var reg 1 ' q $end
+$upscope $end
+$scope module jk3 $end
+$var wire 1 ) clk $end
+$var wire 1 + j $end
+$var wire 1 2 k $end
+$var reg 1 & q $end
+$upscope $end
+$upscope $end
+$scope module dm $end
+$var wire 1 ) q0 $end
+$var wire 1 ( q1 $end
+$var wire 1 ' q2 $end
+$var wire 1 & q3 $end
+$var wire 16 3 data [15:0] $end
+$var reg 1 " out $end
+$upscope $end
+$scope module mmry $end
+$var wire 1 & q0 $end
+$var wire 1 ' q1 $end
+$var wire 1 ( q2 $end
+$var wire 1 ) q3 $end
+$var reg 16 4 data [15:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1 4
+b1 3
+12
+11
+10
+1/
+1.
+1-
+1,
+0+
+b1 *
+0)
+0(
+0'
+0&
+b0 %
+1$
+b1 #
+1"
+b0 !
+$end
+#5000
+b10 #
+b10 *
+b10 3
+b10 4
+b1000 !
+b1000 %
+1)
+0$
+#10000
+1$
+#15000
+1(
+b100 #
+b100 *
+b100 3
+b100 4
+b100 !
+b100 %
+0)
+0$
+#20000
+1$
+#25000
+b1000 #
+b1000 *
+b1000 3
+b1000 4
+b1100 !
+b1100 %
+1)
+0$
+#30000
+1$
+#35000
+1'
+0(
+b10000 #
+b10000 *
+b10000 3
+b10000 4
+b10 !
+b10 %
+0)
+0$
+#40000
+1$
+#45000
+b100000 #
+b100000 *
+b100000 3
+b100000 4
+b1010 !
+b1010 %
+1)
+0$
+#50000
+1$
+#55000
+0"
+1+
+1(
+b0 #
+b0 *
+b0 3
+b0 4
+b110 !
+b110 %
+0)
+0$
+#60000
+1$
+#65000
+b1110 !
+b1110 %
+1)
+0$
+#70000
+1$
+#75000
+0'
+0.
+0"
+b0 #
+b0 *
+b0 3
+b0 4
+0+
+1&
+0(
+b1 !
+b1 %
+0)
+0$
+#80000
+1$
+#85000
+b1001 !
+b1001 %
+1)
+0$
+#90000
+1$
+#95000
+1"
+b1 #
+b1 *
+b1 3
+b1 4
+1.
+0&
+b0 !
+b0 %
+0)
+0$
+#100000
+1$
+#105000
+b10 #
+b10 *
+b10 3
+b10 4
+b1000 !
+b1000 %
+1)
+0$
+#110000
+1$
+#115000
+1(
+b100 #
+b100 *
+b100 3
+b100 4
+b100 !
+b100 %
+0)
+0$
+#120000
+1$
+#125000
+b1000 #
+b1000 *
+b1000 3
+b1000 4
+b1100 !
+b1100 %
+1)
+0$
+#130000
+1$
+#135000
+1'
+0(
+b10000 #
+b10000 *
+b10000 3
+b10000 4
+b10 !
+b10 %
+0)
+0$
+#140000
+1$
+#145000
+b100000 #
+b100000 *
+b100000 3
+b100000 4
+b1010 !
+b1010 %
+1)
+0$
+#150000
+1$
+#155000
+0"
+1+
+1(
+b0 #
+b0 *
+b0 3
+b0 4
+b110 !
+b110 %
+0)
+0$
+#160000
+1$
+#165000
+b1110 !
+b1110 %
+1)
+0$
+#170000
+1$
+#175000
+0'
+0+
+0"
+b0 #
+b0 *
+b0 3
+b0 4
+0.
+0(
+1&
+b1 !
+b1 %
+0)
+0$
+#180000
+1$
+#185000
+b1001 !
+b1001 %
+1)
+0$
+#190000
+1$
+#195000
+1"
+b1 #
+b1 *
+b1 3
+b1 4
+1.
+0&
+b0 !
+b0 %
+0)
+0$
+#200000
+1$

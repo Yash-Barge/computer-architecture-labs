@@ -89,7 +89,12 @@ module testbench();
     Design final(clk, reset, match);
 
     initial begin
-        $monitor($time, " %b", match);
+        $monitor($time, " match = %b", match);
         #32 $finish;
+    end
+
+    initial begin
+        $dumpfile("2020.vcd");
+        $dumpvars;
     end
 endmodule
